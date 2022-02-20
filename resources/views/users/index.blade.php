@@ -12,6 +12,14 @@
 
 </div>
 
+{{-- <div>
+        @if(auth()->user()->role_id == 3)
+            <h1> Hello Admin</h1>
+        @else
+            <h1> Hello Customer </h1>
+        @endif
+        
+</div> --}}
 
 
 <div class="overflow-x-auto">

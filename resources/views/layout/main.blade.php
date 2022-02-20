@@ -71,6 +71,10 @@ License: You must have a valid license purchased only from themeforest(the above
             <a href="" class="flex mr-auto">
                 <img alt="Midone Tailwind HTML Admin Template" class="w-6"
                     src="{{ asset('Admin/dist/images/l.jpeg') }}">
+                    {{-- src="images/{{$c->unique_id_pic}}" --}}
+                    {{-- {{dd($setting)}} --}}
+                    {{-- <img alt="Midone Tailwind HTML Admin Template" class="w-6"
+                    src="images/logo/{{$setting->logo}}" alt="IMG"> --}}
             </a>
             <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2"
                     class="w-8 h-8 text-white transform -rotate-90"></i> </a>
@@ -83,6 +87,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="menu__title"> Dashboard </div>
                 </a>
             </li>
+
+            
             <li>
                 <a href="javascript:;" class="menu">
                     <div class="menu__icon"> <i data-feather="box"></i> </div>
@@ -193,6 +199,15 @@ License: You must have a valid license purchased only from themeforest(the above
             <a href="" class="intro-x flex items-center pl-5 pt-4">
                 <img alt="Midone Tailwind HTML Admin Template" class="w-120"
                     src="{{ asset('Admin/dist/images/l.jpeg') }}">
+
+                    {{-- @php
+                        use general_setting;
+                        $setting = general_setting::find(1);
+                    @endphp --}}
+
+                    {{-- <img style="
+                    width: 144px;" alt="Midone Tailwind HTML Admin Template" class="w-6"
+                    src="images/logo/{{$setting->logo}}" width="100px" alt="IMG"> --}}
             </a>
             <div class="side-nav__devider my-6"></div>
             <ul>
@@ -203,6 +218,172 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="side-menu__title"> Dashboard </div>
                     </a>
                 </li>
+                {{-- setting start  --}}
+                <li>
+                    <a href="javascript:;" class="side-menu">
+                        <div class="side-menu__icon"> <i class="fas fa-tasks"></i> </div>
+                        <div class="side-menu__title"> General Setting  <i data-feather="chevron-down"
+                                class="side-menu__sub-icon"></i> </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="{{ url('settings.main') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Company Details </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('settings.social') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Social Details </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('settings.smtpconfig') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> SMTP Configuration </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('settings.paymentsetting') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Payment Setting </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('settings.testimonials') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.create') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"><i class="fas fa-user-plus"></i> </div>
+                                <div class="side-menu__title"> Show Testimonials </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                {{-- setting end  --}}
+
+                {{-- Shipment start  --}}
+                <li>
+                    <a href="javascript:;" class="side-menu">
+                        <div class="side-menu__icon"> <i class="fas fa-tasks"></i> </div>
+                        <div class="side-menu__title"> Shipment Setting  <i data-feather="chevron-down"
+                                class="side-menu__sub-icon"></i> </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="{{ url('shipments.main') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> All Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.add_shipment') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Create Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.return_to_client') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Return Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.delivered_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Delivered Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.inTransit_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> In Transit Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.deleted_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Deleted Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.import_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Import Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.export_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Export Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.archive_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Archive Shipments </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('shipments.print_shipments') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Bulk Print </div>
+                            </a>
+                        </li>
+
+
+                        {{-- <li>
+                            <a href="{{ url('settings.smtpconfig') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> SMTP Configuration </div>
+                            </a>
+                        </li> --}}
+                        {{-- <li>
+                            <a href="{{ url('settings.paymentsetting') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> Payment Setting </div>
+                            </a>
+                        </li> --}}
+                        {{-- <li>
+                            <a href="{{ url('settings.testimonials') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.create') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"><i class="fas fa-user-plus"></i> </div>
+                                <div class="side-menu__title"> Show Testimonials </div>
+                            </a>
+                        </li> --}}
+
+                    </ul>
+                </li>
+                {{-- Shipment end  --}}
+
+
+
+
                 <li>
                     <a href="javascript:;" class="side-menu">
                         <div class="side-menu__icon"> <i class="fas fa-tasks"></i> </div>
@@ -251,6 +432,38 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     </ul>
                 </li>
+
+                {{-- RTO  --}}
+
+                <li>
+                    <a href="javascript:;" class="side-menu">
+                        <div class="side-menu__icon"> <i class="fas fa-tasks"></i> </div>
+                        <div class="side-menu__title"> RPO Management <i data-feather="chevron-down"
+                                class="side-menu__sub-icon"></i> </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="{{ route('RPO.index') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.index') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"> <i class="fas fa-tasks"></i></div>
+                                <div class="side-menu__title"> RTO LIST </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('RPO_pendings') }}"
+                                class="side-menu menu--active {{ Route::currentRouteName('customers.create') ? 'side-menu--active' : '' }}">
+                                <div class="side-menu__icon"><i class="fas fa-user-plus"></i> </div>
+                                <div class="side-menu__title"> Pending RTO List </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                {{-- RTO   --}}
+
+
+
                 <li>
                     <a href="{{ route('branches.index') }}" class="side-menu ">
                         <div class="side-menu__icon"> <i class="fas fa-building"></i> </div>
@@ -417,6 +630,14 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="-intro-x breadcrumb mr-auto hidden sm:flex"> <a href=""
                         class="">Application</a> <i data-feather="chevron-right"
                         class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Dashboard</a> </div>
+                        <div>
+                            @if(auth()->user()->role_id == 3)
+                                <h1> Hello Admin</h1>
+                            @else
+                                <h1> Hello Customer </h1>
+                            @endif
+                            
+                    </div>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Search -->
                 <div class="intro-x relative mr-3 sm:mr-6">

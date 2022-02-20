@@ -12,5 +12,6 @@ class Country extends Model
         'country_name',
 
     ];
+    // protected $guarded = [];  
 
 }

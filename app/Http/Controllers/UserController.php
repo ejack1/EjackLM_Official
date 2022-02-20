@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Designation;
+use App\Models\State;
 
 class UserController extends Controller
 {
     public function index()
     {
-
-          $users = User::latest()->paginate(5);
+        $users = User::latest()->paginate(5);
 
         return view('users.index',compact('users'));
     }
@@ -24,10 +24,11 @@ class UserController extends Controller
     {
 
         $countries=Country::all();
-
+        $cities = City::all();
         $roles=Role::all();
+        $states = State::all();
         $designations=Designation::all();
-        return view('users.create',compact('countries','roles','designations'));
+        return view('users.create',compact('countries','roles','designations','cities','states'));
     }
 
     public function store(Request $request)

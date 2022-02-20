@@ -41,7 +41,8 @@
             @foreach ( $routes as $route  )
             <tr>
                 <td>{{$route->id}}</td>
-                <td>{{$route->routecode}}</td>
+                {{-- <td>{{$route->routecode}}</td> --}}
+                <td>{{$route->routename}}</td>
                 <td>{{$route->country_id}}</td>
                 <td>{{$route->city_id}}</td>
                 <td>{{$route->keywords}}</td>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\general_setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
-        return view('layout.main');
+        $setting = general_setting::find(1);
+        dd('hi');
+        return view('layout.main',['setting' => $setting]);
     }
 }

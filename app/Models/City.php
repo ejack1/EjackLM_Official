@@ -24,5 +24,15 @@ class City extends Model
         return $this->belongsTo(State::class);
     }
 
+    //R
+    public function shipment()
+    {
+        return $this->belongsTo(shipment::class);
+    }
+
+    // public function name()
+    // {
+    //     return $this->name;
+    // }
 
 }
